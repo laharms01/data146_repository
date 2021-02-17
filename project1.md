@@ -50,3 +50,12 @@ The country with the lowest life expectancy in the data was Rwanda in the year 1
 | France        | 1,861,227,940,621.3972 |
 | Italy         | 1,661,264,433,000.4402 |
 | Spain         | 1,165,759,889,360.7666 |
+
+Stretch Goal:
+Increase in total GDP:
+Germany -  177402446825
+France  -  127834440236
+Italy   -   41156438274.9
+Spain   -  168553191330
+
+Germany experienced the most significant increase in total GDP in the 5-year period up to 2007.
