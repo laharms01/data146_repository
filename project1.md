@@ -27,3 +27,11 @@ This creates a data frame, called dataf, by reading in data from the path_to_dat
 In order to determine the number of rows and columns in a given data frame, you must use the .shape function. If I were trying to do so with my dataf data frame in the above example I would type print(dataf.shape).
 
 Another way to describe the rows and columns of a data frame is through series. A series is a one-dimensional array that contains any type of data (pretty much the same thing as a column). Data frames are made through the combination of numerous series.
+
+
+> Import the gapminder.tsv data set and create a new data frame. Interrogate and describe the year variable within the data frame you created. Does this variable exhibit regular intervals? If you were to add new outcomes to the raw data in order to update and make it more current, which years would you add to each subset of observations? Stretch goal: can you identify how many new outcomes in total you would be adding to your data frame?
+
+It seems the year variable within the gapminder.tsv data set exhibits regular intervals of 5 years. The max year in each subset of data observations is 2007. In order to make this data more current I would include the years 2012 and 2017, adhering to the 5 year intervals present in the data before. 
+
+Stretch Goal:
+To determine the total amount of new outcomes that will be added, I must first figure out how many countries are present in the data frame. There are a total of 1704 rows. Each country has 12 rows representing every 5 years between 1952 - 2007. 1704 / 12 = 142. So there are 142 countries in our data frame and to make the data current we are adding two new rows (2012, 2017) to each of these. Thus the total number would be 142 * 2 = 284.
