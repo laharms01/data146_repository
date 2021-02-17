@@ -13,3 +13,17 @@ Assume I am attempting to download the pandas and numpy packages, both very usef
 
 
 > Describe what is a data frame? Identify a library of functions that is particularly useful for working with data frames. In order to read a file in its remote location within the file system of your operating system, which command would you use? Provide an example of how to read a file and import it into your work session in order to create a new data frame. Also, describe why specifying an argument within a read_() function can be significant. Does data that is saved as a file in a different type of format require a particular argument in order for a data frame to be successfully imported? Also, provide an example that describes a data frame you created. How do you determine how many rows and columns are in a data frame? Is there an alternate terminology for describing rows and columns?
+
+A data frame is a table, made of columns and rows, which represent data values of a certain type. Each column is a separate variable while each row contains a set of values for each column. Data frames allow for the visualization and easy calculation of data sets. 
+
+Pandas is one of the most useful library of functions when working with data frames as it allows us to quickly locate data points or subset our whole data frame.
+
+In order to read a file from the file system into our workspace, we must use the read_csv function in pandas. For example, suppose we have a file we want to read into our workspace, 'exfile.tsv'. To do this, assuming we have imported pandas as pd, we can type pd.read_csv('exfile.tsv'). This goes into pandas and uses the read_csv function to read in the file we typed between the parentheses. Within the read_csv function you must specify at least one argument which is the filename. Without doing this the function does not know which file to read in. By inputting the filename, the function locates this file in your file system and reads it into your workspace. There is a second optional argument that can be used when data is saved in a file under a different format. In order to successfully import data frames from reading in files, the data must be able to be separated and parsed through based on the separation format. Thus a second argument, sep = ' ', can be used to specify the file's data format. If data in a file is separated with tabs use sep = '\t', if separated with spaces use sep = '\s', and so on.
+
+An example of a data frame I created in past exercises is as shown:
+  dataf = pd.read_csv(path_to_data, sep='\t')
+This creates a data frame, called dataf, by reading in data from the path_to_data file, specifying that data is delimited by tabs.
+
+In order to determine the number of rows and columns in a given data frame, you must use the .shape function. If I were trying to do so with my dataf data frame in the above example I would type print(dataf.shape).
+
+Another way to describe the rows and columns of a data frame is through series. A series is a one-dimensional array that contains any type of data (pretty much the same thing as a column). Data frames are made through the combination of numerous series.
