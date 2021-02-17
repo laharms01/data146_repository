@@ -1,4 +1,4 @@
-Project 1
+# Project 1
 
 > Describe what is a package? Also, describe what is a library? What are the two steps you need to execute in order to install a package and then make that library of functions accessible to your workspace and current python work session? Provide examples of how you would execute these two steps using two of the packages we have used in class thus far.
 
