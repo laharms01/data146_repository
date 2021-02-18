@@ -66,5 +66,6 @@ Germany experienced the most significant increase in total GDP in the 5-year per
 &
 
 ==
+
 Whereas a single = is used to assign values (for example to new variables, pie = 3.14), the == operator is used to check for equality between two values / variables. 
 If I were attempting to subset a data frame into a smaller data frame with certain parameters I could use the == operator. Suppose I have a number of data points on precipitation in the williamsburg area for the past 20 years in my data frame. If I was only interested in data for the past year, in order to clean up my table I could select only data points in the year 2020 like this: prec_data_2020 = prec_data[prec_data['year'] == '2020']
