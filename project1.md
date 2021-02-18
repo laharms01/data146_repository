@@ -79,3 +79,5 @@ If I were attempting to subset a data frame into a smaller data frame with certa
 The | operator is useful when subsetting data frames to select data which fulfill either of a set of parameters. For example, suppose I have a data frame with economic data of countries over time. If I were attempting to select data points that are either from the most recent year or from the year 2000 to compare rates of change over 20 years I could do so likewise: new_frame = old_frame[old_frame['year'] == '2020'] | old_frame[old_frame['year'] == '2000']
 
 ^
+
+^ is an exclusive or bitwise operator. This means when used to compare two values (x ^ y) bit by bit, each output bit is set to 1 if and only if one of the two corresponding bit values is 1. If the bit in both x and y is 1, the output is 0.
