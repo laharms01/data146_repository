@@ -81,8 +81,8 @@ The | operator is useful when subsetting data frames to select data which fulfil
 ^
 
 ^ is an exclusive or bitwise operator. This means when used to compare two values (x ^ y) bit by bit, each output bit is set to 1 if and only if one of the two corresponding bit values is 1. If the bit in both x and y is 1, the output is 0.
-This operator can be useful when selecting those data points in a set that fulfills only one of a set of parameters. For example, 
-
+This operator can be useful when selecting those data points in a set that fulfills only one of a set of parameters. For example, if I had a data set of earthquakes in US states and only wanted those points that affected California and Nevada but not both I could write:
+new_frame = old_frame[old_frame['state'] == 'California'] ^ old_frame[old_frame['state'] == 'Nevada']
 
 > Describe the difference between .loc and .iloc. Provide an example of how to extract a series of consecutive observations from a data frame. Stretch goal: provide an example of how to extract all observations from a series of consecutive columns.
 
