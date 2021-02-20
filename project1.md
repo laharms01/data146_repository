@@ -104,10 +104,15 @@ new_data = requests.get(http://api.somethingsomething.org)
 Running this line sends a request to the specified api and creates a response variable, in this case named new_data, with the information from the api. With this response variable, you now have access to the desired data in your workspace and can use it for further analysis.
 
  
+> Describe the apply() function from the pandas library. What is its purpose? Using apply) to various class objects is an alternative (potentially preferable approach) to writing what other type of command? Why do you think apply() could be a preferred approach?
+
+The apply() function in pandas is a usefull tool that applies an inputted function onto an entire set of data in a data frame. It then outputs a data frame with the new data points after the inputted function has been applied. For example, if I have a data frame and want to create a new frame with the square root of each data point I can quickly do this by using the apply() function. In this case I would pass the numpy.sqrt function into the apply(). 
+data_f.apply(numpy.sqrt)
+
+Using the apply() function is an alternative to writing a loop that iterates over a data frame. The apply() function is often preferable to writing loops as it is a more succinct method of achieving the same end goal. Using apply() takes up a lot less space and makes your code easier to read through.
 
 
-
-
+> Also describe an alternative approach to filtering the number of columns in a data frame. Instead of using .iloc, what other approach might be used to select, filter and assign a subset number of variables to a new data frame?
 
 
 
