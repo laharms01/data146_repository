@@ -73,10 +73,10 @@ The & operator is useful when subsetting a data frame to select data which fulfi
 Whereas a single = is used to assign values (for example to new variables, pie = 3.14), the == operator is used to check for equality between two values / variables. 
 If I were attempting to subset a data frame into a smaller data frame with certain parameters I could use the == operator. Suppose I have a number of data points on precipitation in the williamsburg area for the past 20 years in my data frame. If I was only interested in data for the past year, in order to clean up my table I could select only data points in the year 2020 like this: prec_data_2020 = prec_data[prec_data['year'] == '2020']
 
-  |
+```|```
 
-| is a bitwise operator, and functions similar to the & operator. When used to compare two values (x | y) bit by bit, only one bit has to be 1 for the output to be 1. The output will be 0 only if the corresponding bit in both x and y are 0. 
-The | operator is useful when subsetting data frames to select data which fulfill either of a set of parameters. For example, suppose I have a data frame with economic data of countries over time. If I were attempting to select data points that are either from the most recent year or from the year 2000 to compare rates of change over 20 years I could do so likewise: new_frame = old_frame[old_frame['year'] == '2020'] | old_frame[old_frame['year'] == '2000']
+```|``` is a bitwise operator, and functions similar to the & operator. When used to compare two values (x ```|``` y) bit by bit, only one bit has to be 1 for the output to be 1. The output will be 0 only if the corresponding bit in both x and y are 0. 
+The ```|``` operator is useful when subsetting data frames to select data which fulfill either of a set of parameters. For example, suppose I have a data frame with economic data of countries over time. If I were attempting to select data points that are either from the most recent year or from the year 2000 to compare rates of change over 20 years I could do so likewise: new_frame = old_frame[old_frame['year'] == '2020'] ```|``` old_frame[old_frame['year'] == '2000']
 
 ^
 
