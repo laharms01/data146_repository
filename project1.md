@@ -81,3 +81,35 @@ The | operator is useful when subsetting data frames to select data which fulfil
 ^
 
 ^ is an exclusive or bitwise operator. This means when used to compare two values (x ^ y) bit by bit, each output bit is set to 1 if and only if one of the two corresponding bit values is 1. If the bit in both x and y is 1, the output is 0.
+This operator can be useful when selecting those data points in a set that fulfills only one of a set of parameters. For example, 
+
+
+> Describe the difference between .loc and .iloc. Provide an example of how to extract a series of consecutive observations from a data frame. Stretch goal: provide an example of how to extract all observations from a series of consecutive columns.
+
+.loc and .iloc are two useful tools in the pandas library for the selection of certain data points. When using .iloc, you pass in the integer position of the desired data rows to be selected. For example, if I wanted to select only the 3rd row in my data I would input data_f.iloc[2]. In contrast, when using .loc, you pass in the label of the rows to be selected. If I wanted to select only that same 3rd row in my data I would input data_f.loc['France'], assuming my data points are indexed by country.
+
+In order to extract a series of consecutive observations from a data frame I would use .iloc. Lets say I want the first 10 rows of my data to be selected. I could do so by inputting data_f.iloc[0:10]
+This starts selecting row 0 and selects up to just before the last number, 10. This results in rows 0 - 9 being selected, the first 10 in the data frame.
+
+Stretch Goal:
+.iloc can also be used to select whole columns of the data frame which may be useful for a number of purposes. If I wanted to select the first two columns of my data frame I would input data_f.iloc[:, 0:2]
+
+
+> Describe how an api works. Provide an example of how to construct a request to a remote server in order to pull data, write it to a local file and then import it to your current work session.
+
+APIs, or application programming interfaces, are servers that allow for the retrieval of certain data through the input of code requests. It works pretty simply, code is inputted that sends a data retrieval request to the api server. The server then processes this request and outputs the desired data to be used.
+
+In order to utilize api requests in python, we must first download the requests library which grants access to a number of ways to request and access data from apis. Once the requests library is installed you must type 'import requests' in your workspace to be able to utilize this library. When attempting to retrieve data, the get request function is often used. This is a simple function with only one required input, the api URL that the request is being made to. An example of a get request would look like this:
+new_data = requests.get(http://api.somethingsomething.org)
+Running this line sends a request to the specified api and creates a response variable, in this case named new_data, with the information from the api. With this response variable, you now have access to the desired data in your workspace and can use it for further analysis.
+
+ 
+
+
+
+
+
+
+
+
+
