@@ -114,7 +114,7 @@ Using the apply() function is an alternative to writing a loop that iterates ove
 
 > Also describe an alternative approach to filtering the number of columns in a data frame. Instead of using .iloc, what other approach might be used to select, filter and assign a subset number of variables to a new data frame?
 
-
+An alternative to using the .iloc function to select a series of columns from a data frame is selecting based on column labels. For example, suppose I have 5 columns in my data frame but am only interested in the 'Date' and 'Location' columns. To select these I can simply write data_frame['Date', 'Location'] and assign this to a new object. The resulting data frame will only comprise these two specified columns. 
 
 
 
