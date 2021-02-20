@@ -61,7 +61,7 @@ Spain   -  168553191330
 Germany experienced the most significant increase in total GDP in the 5-year period up to 2007.
 
 
-> You have been introduced to four logical operators thus far: &, ==, | and ^. Describe each one including its purpose and function. Provide an example of how each might be used in the context of programming.
+> You have been introduced to four logical operators thus far: &, ==, ```|``` and ^. Describe each one including its purpose and function. Provide an example of how each might be used in the context of programming.
 
 &
 
