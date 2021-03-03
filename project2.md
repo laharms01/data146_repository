@@ -20,6 +20,7 @@ alpha = 2.0
 beta = 2.0
 x1 = np.random.beta(alpha, beta, size=n)
 plt.figure(figsize=(8, 8))
-plt.hist(x1)
+plt.hist(x1, rwidth=0.8)
 ```
 The above code will result in a histogram with aprroximate normal distribution. Thus, the resulting mean should be quite close to the 50th percentile.
+[Plot 1](Plot1.png)
