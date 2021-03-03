@@ -82,7 +82,7 @@ plt.show()
 ```
 [Plot 5](plot5.png)
 
-After looking at both plots, I would say that the logarithmic transformation plot best communicates the change in life expectancy in all countries between 1952 and 2007. This is because the trends in data in both years seem to be a bit easier to read and the amount of high life expectancy countries in 2007 relative to 1952 is more pronounced than in the raw data plot.
+After looking at both plots, although they look quite similar I would say that the logarithmic transformation plot best communicates the change in life expectancy in all countries between 1952 and 2007. This is because the trends in data in both years seem to be a bit easier to read and the amount of high life expectancy countries in 2007 relative to 1952 is more pronounced than in the raw data plot.
 
 
 > Using the seaborn library of functions, produce a box and whiskers plot of population for all countries at the given 5-year intervals. Also apply a logarithmic transformation to this data and produce a second plot. Which of the two resulting box and whiskers plots best communicates the change in population amongst all of these countries from 1952 to 2007?
@@ -103,7 +103,7 @@ plt.ylabel('$\log_{10}$ Population in Billions')
 ```
 [Plot 7](plot7.png)
 
-
+It is more obvious than in the last question which plot is better at communicating the change in population. Because of the presence of far outliers in the first plot, the actual box plot which has our useful data points is barely visible. While this is true, you still can see population growth over time in this first plot. However, the second plot is a much better representation of our data because it gets rid of those outliers and presents the boxes visibly. Because the plot is cleaner, easier to read, and still shows the upward growth in population, it is the best one.
 
 
 
