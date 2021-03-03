@@ -75,7 +75,7 @@ Plot with logarithmic transformation:
 plt.figure(figsize=(6, 6))
 plt.hist(np.log10(df52['lifeExp']), rwidth=0.9, label=1952, alpha=0.5)
 plt.hist(np.log10(df07['lifeExp']), rwidth=0.9, label=2007, alpha=0.5)
-plt.xlabel('Life Expectancy')
+plt.xlabel('$\log_{10}$ Life Expectancy')
 plt.ylabel('Number of Countries')
 plt.legend()
 plt.show()
