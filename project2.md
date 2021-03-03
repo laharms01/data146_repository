@@ -87,8 +87,21 @@ After looking at both plots, I would say that the logarithmic transformation plo
 
 > Using the seaborn library of functions, produce a box and whiskers plot of population for all countries at the given 5-year intervals. Also apply a logarithmic transformation to this data and produce a second plot. Which of the two resulting box and whiskers plots best communicates the change in population amongst all of these countries from 1952 to 2007?
 
+Plot with raw data:
+```
+plt.figure(figsize=(6, 6))
+sns.boxplot(x=df['year'], y=df['pop'], color='pink')
+plt.ylabel('Population in Billions')
+```
+[Plot 6](plot6.png)
 
-
+Plot with logarithmic transformation:
+```
+plt.figure(figsize=(6, 6))
+sns.boxplot(x=df['year'], y=np.log10(df['pop']), color='pink')
+plt.ylabel('$\log_{10}$ Population in Billions')
+```
+[Plot 7](plot7.png)
 
 
 
