@@ -103,7 +103,7 @@ plt.ylabel('$\log_{10}$ Population in Billions')
 ```
 [Plot 7](plot7.png)
 
-It is more obvious than in the last question which plot is better at communicating the change in population. Because of the presence of far outliers in the first plot, the actual box plot which has our useful data points is barely visible. While this is true, you still can see population growth over time in this first plot. However, the second plot is a much better representation of our data because it gets rid of those outliers and presents the boxes visibly. Because the plot is cleaner, easier to read, and still shows the upward growth in population, it is the best one.
+It is more obvious than in the last question which plot is better at communicating the change in population. Because of the presence of far outliers in the first plot, the actual box plot which has our useful data points is barely visible. While this is true, you still can see population growth over time in this first plot. However, the second plot is a much better representation of our data because it gets rid of those outliers and presents the boxes visibly. Because the plot is cleaner, easier to read, and still shows the upward growth in population, it is the best representation of our data.
 
 
 
