@@ -56,7 +56,7 @@ Plot with normal data:
 [Plot 4](plot4.png)
 
 Plot with logarithmic transformation:
-[Plot 5]
+[Plot 5](plot5.png)
 
 
 
