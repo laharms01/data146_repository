@@ -82,7 +82,10 @@ plt.show()
 ```
 [Plot 5](plot5.png)
 
+After looking at both plots, I would say that the logarithmic transformation plot best communicates the change in life expectancy in all countries between 1952 and 2007. This is because the trends in data in both years seem to be a bit easier to read and the amount of high life expectancy countries in 2007 relative to 1952 is more pronounced than in the raw data plot.
 
+
+> Using the seaborn library of functions, produce a box and whiskers plot of population for all countries at the given 5-year intervals. Also apply a logarithmic transformation to this data and produce a second plot. Which of the two resulting box and whiskers plots best communicates the change in population amongst all of these countries from 1952 to 2007?
 
 
 
