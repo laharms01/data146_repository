@@ -167,14 +167,30 @@ Testing: -0.008
 It seems, even when using the actual price data, our models are still not very efficient. In fact, from the tests I ran, this dataset seemed to prodce models that were less useful in explaining our data.
 
 
+> Go back and also add the variables that indicate the zip code where each individual home is located within Charleston County, South Carolina. Train and test each of the three previous model types/specifications. What was the predictive power of each model? Interpret and assess your output.
+
+After inclding the remaining zipcode columns in our features list, I ran the three models again and got the following scores:
+
+Unstandardized Linear Model:
+```
+Training: 0.339
+Testing: 0.236
+```
+
+Standardized Linear Model:
+```
+Training: 0.346
+Testing: -304448750933676656689152.000
+```
+
+Standardized Ridge Model:
+```
+Training: 0.332
+Testing: 0.270
+```
 
 
-
-
-
-
-
-
+> Finally, consider the model that produced the best results. Would you estimate this model as being overfit or underfit? If you were working for Zillow as their chief data scientist, what action would you recommend in order to improve the predictive power of the model that produced your best results from the approximately 700 observations (716 asking / 660 actual)?
 
 
 
