@@ -189,6 +189,7 @@ Training: 0.332
 Testing: 0.270
 ```
 
+With the addition of zip codes in our features list, the efficiency of our models improved by a very large amount when compared to past changes. This is an indication that zip codes are very pertinent values to consider when determining the price of a given house. The unstandardized linear and standardized ridge models both improved significantly by adding the zip codes. The training score for the standardized linear model also improved. However, the testing score of this model is now a very (very) large negative number, which could be due to a number of reasons. I would imagine it has something to do with the binary nature of the zip code data and the process of standardizing it. 
 
 > Finally, consider the model that produced the best results. Would you estimate this model as being overfit or underfit? If you were working for Zillow as their chief data scientist, what action would you recommend in order to improve the predictive power of the model that produced your best results from the approximately 700 observations (716 asking / 660 actual)?
 
