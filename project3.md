@@ -164,6 +164,7 @@ Training: 0.004
 Testing: -0.008
 ```
 
+It seems, even when using the actual price data, our models are still not very efficient. In fact, from the tests I ran, this dataset seemed to prodce models that were less useful in explaining our data.
 
 
 
