@@ -136,3 +136,36 @@ Testing: 0.012
 ```
 
 There is some significant (at least compared to the last few questions) change in the testing score, which is now a positive number. However, the training score has remained pretty much unchanged and both testing and training are still very low values. So even with ridge regression our model is not as efficient as we would like.
+
+
+> Next, go back, train and test each of the three previous model types/specifications, but this time use the dataset charleston_act.csv (actual sale prices). How did each of these three models perform after using the dataset that replaced asking price with the actual sale price? What were the training and testing scores you produced? Interpret and assess your output.
+
+Let's first read in our new csv:
+```
+data = pd.read_csv('charleston_act.csv')
+```
+
+# Training and Testing Scores:
+Unstandardized Linear Model
+
+Standardized Linear Model
+
+Standardized Ridge Model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
