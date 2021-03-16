@@ -128,7 +128,7 @@ for idxTrain, idxTest in kf.split(X):
 print('Training: ' + format(np.mean(train_scores), '.3f'))
 print('Testing: ' + format(np.mean(test_scores), '.3f'))
 ```
-Note that the amount of folds used in this code is still 10 and our data is still standardized in our code.
+Note that the amount of folds used in this code is still 10 and our data is still standardized.
 The resulting outputs are:
 ```
 Training: 0.019
