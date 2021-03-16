@@ -50,7 +50,7 @@ Training: 0.019
 Testing: -0.004
 ```
 
-These values tell us quite a lot about the shape of our regression and the strength of the relationship between our variables. The higher the score is, the better our model is at explaining the variance we see in our data.
+These values tell us quite a lot about the shape of our regression and the strength of the relationship between our variables. The higher the score is, the better our model is at explaining the variance we see in our data, with a score of 1 indicating perfect explanatory power.
 
 Unfortunately, it seems that our model is not super useful in explaining all the variation present. Our training score is positive but very low, and thus not very useful. The testing score actually turned out to be slightly negative, which is even worse. This is an indication that our current features (beds, baths, sqft) are not very useful in determining the price of a given house. In order to better adpat our model to the dataset, there are a few extra steps that should be taken.
 
