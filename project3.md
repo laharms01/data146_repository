@@ -86,12 +86,14 @@ print('Training: ' + format(np.mean(train_scores), '.3f'))
 print('Testing: ' + format(np.mean(test_scores), '.3f'))
 ```
 
+Note that, like the last question, the amount of folds used in this code is still 10.
 The resulting outputs are:
 ```
-
+Training: 0.020
+Testing: -0.000
 ```
 
-
+Hmm... it seems that standardizing our data has improved the efficacy of our model, but no where near the extent we would like. The training score is still very low and the testing score is now just zero.
 
 
 
