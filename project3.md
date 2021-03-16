@@ -98,9 +98,41 @@ Hmm... it seems that standardizing our data has improved the efficacy of our mod
 
 > Then train your dataset with the asking price as your target using a ridge regression model. Now how did your model perform? What were the training and testing scores you produced? Did you standardize the data? Interpret and assess your output.
 
+Our next step in trying to improve our model will be to try ridge regression instead of linear regression. We can do this by first importing the ridge function into our code:
+```
+from sklearn.linear_model import Ridge
+```
 
+All we need to find now is the optimal alpha value to run our ridge regression, which was determined to be 100 (from a range of 0 to 100). With this value, we can run our ridge model:
+```
+rid_reg = Ridge(alpha=100)
 
+train_scores = []
+test_scores = []
 
+for idxTrain, idxTest in kf.split(X):
+  Xtrain = X.iloc[idxTrain, :]
+  Xtest = X.iloc[idxTest, :]
+  ytrain = Y.iloc[idxTrain]
+  ytest = Y.iloc[idxTest]
 
+  ss = SS()
+  Xtrain = ss.fit_transform(Xtrain)
+  Xtest = ss.transform(Xtest)
 
+  rid_reg.fit(Xtrain, ytrain)
 
+  train_scores.append(rid_reg.score(Xtrain, ytrain))
+  test_scores.append(rid_reg.score(Xtest, ytest))
+
+print('Training: ' + format(np.mean(train_scores), '.3f'))
+print('Testing: ' + format(np.mean(test_scores), '.3f'))
+```
+Note that the amount of folds used in this code is still 10 and our data is still standardized in our code.
+The resulting outputs are:
+```
+Training: 0.019
+Testing: 0.012
+```
+
+There is some significant (at least compared to the last few questions) change in the testing score, which is now a positive number. However, the training score has remained pretty much unchanged and both testing and training are still very low values. So even with ridge regression our model is not as efficient as we would like.
