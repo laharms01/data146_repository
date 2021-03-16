@@ -145,7 +145,7 @@ Let's first read in our new csv:
 data = pd.read_csv('charleston_act.csv')
 ```
 
-# Training and Testing Scores:
+### Training and Testing Scores:
 Unstandardized Linear Model
 
 Standardized Linear Model
