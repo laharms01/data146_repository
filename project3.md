@@ -146,11 +146,23 @@ data = pd.read_csv('charleston_act.csv')
 ```
 
 ### Training and Testing Scores:
-Unstandardized Linear Model
+Unstandardized Linear Model:
+```
+Training: 0.006
+Testing: -0.028
+```
 
-Standardized Linear Model
+Standardized Linear Model:
+```
+Training: 0.004
+Testing: -0.012
+```
 
-Standardized Ridge Model
+Standardized Ridge Model:
+```
+Training: 0.004
+Testing: -0.008
+```
 
 
 
