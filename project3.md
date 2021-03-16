@@ -53,3 +53,49 @@ Testing: -0.004
 These values tell us quite a lot about the shape of our regression and the strength of the relationship between our variables. The higher the score is, the better our model is at explaining the variance we see in our data.
 
 Unfortunately, it seems that our model is not super useful in explaining all the variation present. Our training score is positive but very low, and thus not very useful. The testing score actually turned out to be slightly negative, which is even worse. In order to better adpat our model to the dataset, there are a few extra steps that should be taken.
+
+
+> Now standardize your features (again beds, baths and area) prior to training and testing with a linear regression model (also again with asking price as your target). Now how did your model perform? What were the training and testing scores you produced? How many folds did you assign when partitioning your training and testing data? Interpret and assess your output.
+
+In order to better optimize our model to interpret the data, it will be useful to standardize our features. This can be achieved by importing the standard scaler from sklearn like this:
+```
+from sklearn.preprocessing import StandardScaler as SS
+```
+
+With this new  function, we can run our train / test score code again with the addition of a few new lines of code which standardize our data:
+```
+train_scores = []
+test_scores = []
+
+for idxTrain, idxTest in kf.split(X):
+    Xtrain = X.iloc[idxTrain, :]
+    Xtest = X.iloc[idxTest, :]
+    ytrain = Y.iloc[idxTrain]
+    ytest = Y.iloc[idxTest]
+    
+    ss = SS()
+    Xtrain = SS.fit_transform(Xtrain)
+    Xtest = SS.transform(Xtest)
+
+    lin_reg.fit(Xtrain, ytrain)
+
+    train_scores.append(lin_reg.score(Xtrain, ytrain))
+    test_scores.append(lin_reg.score(Xtest, ytest))
+
+print('Training: ' + format(np.mean(train_scores), '.3f'))
+print('Testing: ' + format(np.mean(test_scores), '.3f'))
+```
+
+The resulting outputs are:
+```
+
+```
+
+
+
+
+
+
+
+
+
