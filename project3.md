@@ -93,7 +93,7 @@ Training: 0.020
 Testing: -0.000
 ```
 
-Hmm... it seems that standardizing our data has improved the efficacy of our model, but no where near the extent we would like. The training score is still very low and the testing score is now just zero.
+Hmm... it seems that standardizing our data has improved the efficacy of our model, but no where near the extent we would like. The training score is still very low and the testing score is now just zero. Thus, even after standardizing our features, they are still not good determinants of the price of a given house.
 
 
 > Then train your dataset with the asking price as your target using a ridge regression model. Now how did your model perform? What were the training and testing scores you produced? Did you standardize the data? Interpret and assess your output.
@@ -145,7 +145,10 @@ Let's first read in our new csv:
 data = pd.read_csv('charleston_act.csv')
 ```
 
+All models still use 10 folds.
+
 ### Training and Testing Scores:
+
 Unstandardized Linear Model:
 ```
 Training: 0.006
@@ -164,7 +167,7 @@ Training: 0.004
 Testing: -0.008
 ```
 
-It seems, even when using the actual price data, our models are still not very efficient. In fact, from the tests I ran, this dataset seemed to prodce models that were less useful in explaining our data.
+It seems, even when using the actual price data, our models are still not very efficient. In fact, from the tests I ran, this dataset seemed to prodce models that were slightly less useful in explaining our data. We can conclude that even when considering actual price, our current features are insufficient in determining the price of a given house.
 
 
 > Go back and also add the variables that indicate the zip code where each individual home is located within Charleston County, South Carolina. Train and test each of the three previous model types/specifications. What was the predictive power of each model? Interpret and assess your output.
@@ -185,15 +188,16 @@ Testing: -304448750933676656689152.000
 
 Standardized Ridge Model:
 ```
-Training: 0.332
+Training: 0.342
 Testing: 0.270
 ```
 
-With the addition of zip codes in our features list, the efficiency of our models improved by a very large amount when compared to past changes. This is an indication that zip codes are very pertinent values to consider when determining the price of a given house. The unstandardized linear and standardized ridge models both improved significantly by adding the zip codes. The training score for the standardized linear model also improved. However, the testing score of this model is now a very (very) large negative number, which could be due to a number of reasons. I would imagine it has something to do with the binary nature of the zip code data and the process of standardizing it. 
+With the addition of zip codes in our features list, the efficiency of our models improved by a very large amount when compared to past changes. This is an indication that zip codes are very pertinent values to consider when determining the price of a given house and are much more useful as features than beds, baths, and sqft. The unstandardized linear and standardized ridge models both improved significantly by adding the zip codes. The training score for the standardized linear model also improved. However, the testing score of this model is now a very (very) large negative number, which could be due to a number of reasons. I would imagine it has something to do with the binary nature of the zip code data and the process of standardizing it.
 
 > Finally, consider the model that produced the best results. Would you estimate this model as being overfit or underfit? If you were working for Zillow as their chief data scientist, what action would you recommend in order to improve the predictive power of the model that produced your best results from the approximately 700 observations (716 asking / 660 actual)?
 
-
+The model which produced the best predictive results is our standardized ridge model. From the testing and training scores we can estimate that the model is a little overfit, because training score is higher than testing score. 
+Our next step to improve this model would be to find more pertinent variables that we can include in our regression. While zipcodes were found to be great predictors of our target (price), there is still a lot of room for our model to improve in explanatory power. Right now our model only explains ~30% of the variation in our data. These additional variables could include local geographic factors, more information about the house such as age or ..., or dynamic space variables like distance from certain desirable locations (grocery store, downtown, etc.).
 
 
 
