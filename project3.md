@@ -96,6 +96,9 @@ Testing: -0.000
 Hmm... it seems that standardizing our data has improved the efficacy of our model, but no where near the extent we would like. The training score is still very low and the testing score is now just zero.
 
 
+> Then train your dataset with the asking price as your target using a ridge regression model. Now how did your model perform? What were the training and testing scores you produced? Did you standardize the data? Interpret and assess your output.
+
+
 
 
 
