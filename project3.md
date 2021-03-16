@@ -17,3 +17,35 @@ Y = data['prices']
 
 lin_reg = LinearRegression()
 ```
+
+Now that we have our model, we should perform K-Fold cross validation to start the process of ascertaining the train and test scores of the data. In order to determine these scores, the dataset is split into a number of folds (specified by n_splits) and subsequently tested. We can define our K-Folds like this:
+```
+kf = KFold(n_splits=10, shuffle=True)
+```
+I personally chose to have 10 folds in the cross validation. This is because, in general, the higher the amount of folds, the more accurate our resulting train and test scores will be.
+
+We can find the train and test scores like this:
+```
+train_scores = []
+test_scores = []
+
+for idxTrain, idxTest in kf.split(X):
+    Xtrain = X.iloc[idxTrain, :]
+    Xtest = X.iloc[idxTest, :]
+    ytrain = Y.iloc[idxTrain]
+    ytest = Y.iloc[idxTest]
+
+    lin_reg.fit(Xtrain, ytrain)
+
+    train_scores.append(lin_reg.score(Xtrain, ytrain))
+    test_scores.append(lin_reg.score(Xtest, ytest))
+
+print('Training: ' + format(np.mean(train_scores), '.3f'))
+print('Testing: ' + format(np.mean(test_scores), '.3f'))
+```
+
+By running this code, the resulting values were output:
+```
+Training: 0.019
+Testing: -0.004
+```
