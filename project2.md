@@ -68,7 +68,7 @@ plt.ylabel('Number of Countries')
 plt.legend()
 plt.show()
 ```
-[Plot 4](Plot4.png)
+[Plot 4](plot4.png)
 
 Plot with logarithmic transformation:
 ```
@@ -80,7 +80,7 @@ plt.ylabel('Number of Countries')
 plt.legend()
 plt.show()
 ```
-[Plot 5](Plot5.png)
+[Plot 5](plot5.png)
 
 After looking at both plots, although they look quite similar I would say that the logarithmic transformation plot best communicates the change in life expectancy in all countries between 1952 and 2007. This is because the trends in data in both years seem to be a bit easier to read and the amount of high life expectancy countries in 2007 relative to 1952 is more pronounced than in the raw data plot.
 
