@@ -164,6 +164,14 @@ The returned values were:
 This indicates that lasso regression led to the lowest coefficient for the AveOccup variable.
 
 ## 22
+For this question, we simply repeat what we did in the last but find the coefficients for the most correlated variable, MedInc.
+```
+lin.coef_[0], rid.coef_[0], las.coef_[0]
+```
+The returned values were:
+(0.82961930428045, 0.8288892465528181, 0.8200140807502059)
+
+This indicates that, again, lasso regression led to the lowest coefficient for the MedInc variable.
 
 ## 23
 
