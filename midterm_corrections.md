@@ -130,6 +130,7 @@ las_tr = []
 las_te = []
 las_tr_mse = []
 las_te_mse = []
+
 for a in las_a_range:
     reg_a_l = Lasso(alpha=a)
     train, test, train_mse, test_mse = DoKFold(reg_a_l, X, y, 20, True, 146)
@@ -150,8 +151,17 @@ Optimal alpha value: 0.00186
 Training score: 0.60616
 Testing score: 0.60213
 
-
 ## 21
+From the correlation table we found in question 15, I determined that the least correlated variable was AveOccup. Next I had to find which regression resulted in the smallest coefficient for this variable.
+```
+lin = LR(); rid = Ridge(alpha=25.8); las = Lasso(alpha=0.00186)
+lin.fit(Xs, y); rid.fit(Xs, y); las.fit(Xs, y);
+lin.coef_[5], rid.coef_[5], las.coef_[5]
+```
+The returned values were:
+(-0.039326266978148866, -0.039412573728940366, -0.03761823364553458)
+
+This indicates that lasso regression led to the lowest coefficient for the AveOccup variable.
 
 ## 22
 
