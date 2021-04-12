@@ -77,6 +77,15 @@ np.corrcoef(X_df['MedInc'], y)[0][1]**2, 2
 This returned a coefficient of determination of ~0.47
 
 ## 18
+For this question, I ran a linear regression on our data frame to calculate the training and testing scores:
+```
+k = 20
+train_scores, test_scores, train_mse, test_mse = DoKFold(LR(), X, y, k, True)
+print(np.mean(train_scores), np.mean(test_scores))
+```
+The train and test scores resulting from this regression are as follows,
+Training: 0.6063
+Testing: 0.60198
 
 ## 19
 
