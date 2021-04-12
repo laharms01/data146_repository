@@ -110,17 +110,46 @@ for a in rid_a_range:
     
 idx = np.argmax(rid_te)
 
-print('Optimal alpha value: ' + format(rid_a_range[idx], '.3f'))
+print('Optimal alpha value: ' + format(rid_a_range[idx], '.5f'))
 print('Training score for this value: ' + format(rid_tr[idx], '.5f'))
 print('Testing score for this value: ' + format(rid_te[idx], '.5f'))
 ```
 Running this code gave us the following scores,
 
-Optimal alpha value: 25.800
+Optimal alpha value: 25.80000
 Training score: 0.60627
 Testing score: 0.60201
 
 ## 20
+Next we ran a lasso regression:
+```
+las_a_range = np.linspace(0.001, 0.003, 101)
+k = 20
+
+las_tr = []
+las_te = []
+las_tr_mse = []
+las_te_mse = []
+for a in las_a_range:
+    reg_a_l = Lasso(alpha=a)
+    train, test, train_mse, test_mse = DoKFold(reg_a_l, X, y, 20, True, 146)
+
+    las_tr.append(np.mean(train))
+    las_te.append(np.mean(test))
+    las_tr_mse.append(np.mean(train_mse))
+    las_te_mse.append(np.mean(train_mse))
+
+
+idx = np.argmax(las_te)
+print('Optimal alpha value: ' + format(las_a_range[idx], '.5f'))
+print('Training score for this value: ' + format(las_tr[idx], '.5f'))
+print('Testing score for this value: ' + format(las_te[idx], '.5f'))
+```
+Running this code gave the following scores,
+Optimal alpha value: 0.00186
+Training score: 0.60616
+Testing score: 0.60213
+
 
 ## 21
 
