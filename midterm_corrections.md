@@ -84,10 +84,41 @@ train_scores, test_scores, train_mse, test_mse = DoKFold(LR(), X, y, k, True)
 print(np.mean(train_scores), np.mean(test_scores))
 ```
 The train and test scores resulting from this regression are as follows,
+
 Training: 0.6063
 Testing: 0.60198
 
 ## 19
+Next we ran the same data through a ridge regression:
+```
+rid_a_range = np.linspace(20, 30, 101)
+k = 20
+
+rid_tr = []
+rid_te = []
+rid_tr_mse = []
+rid_te_mse = []
+
+for a in rid_a_range:
+    reg_a = Ridge(alpha=a)
+    train, test, train_mse, test_mse = DoKFold(reg_a, X, y, k, True, random_state=146)
+
+    rid_tr.append(np.mean(train))
+    rid_te.append(np.mean(test))
+    rid_tr_mse.append(np.mean(train_mse))
+    rid_te_mse.append(np.mean(test_mse))
+    
+idx = np.argmax(rid_te)
+
+print('Optimal alpha value: ' + format(rid_a_range[idx], '.3f'))
+print('Training score for this value: ' + format(rid_tr[idx], '.5f'))
+print('Testing score for this value: ' + format(rid_te[idx], '.5f'))
+```
+Running this code gave us the following scores,
+
+Optimal alpha value: 25.800
+Training score: 0.60627
+Testing score: 0.60201
 
 ## 20
 
