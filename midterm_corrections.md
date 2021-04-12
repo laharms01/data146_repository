@@ -57,6 +57,17 @@ data_f.corr()
 This code will return us a table with the correlation coefficients of each variable. From this table I determined that MedInc was the variable most correlated to our target.
 
 ## 16
+To determine if standardization will affect our correlations we must first take our data from question 15 and standardize it likewise:
+```
+ss = StandardScaler()
+ss_X = ss.fit_transform(X)
+
+ss_X_df = pd.DataFrame(ss_X, columns= data.feature_names)
+ss_Xy_df = st_X_df.copy()
+ss_Xy_df['y'] = y
+ss_Xy_df.corr()
+```
+The resulting correlation table indicated that standardization had no affect on correlation values.
 
 ## 17
 
