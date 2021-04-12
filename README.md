@@ -6,4 +6,4 @@
 [Project 3](project3.md)
 
 ## Informal Exercises
-[Exercise 1](Exercise1.md)
+[Midterm Corrections](midterm_corrections.md)
