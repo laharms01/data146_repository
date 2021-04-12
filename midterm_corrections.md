@@ -51,8 +51,8 @@ def DoKFold(model, X, y, k, standardize=False, random_state=146):
 ## 15
 Finding the feature with the strongest correlation to the target is quite simple. We just data into a dataframe and calculate the correlations:
 ```
-data_f = data.frame
-data_f.corr()
+X_df = data.frame
+X_df.corr()
 ```
 This code will return us a table with the correlation coefficients of each variable. From this table I determined that MedInc was the variable most correlated to our target.
 
@@ -63,13 +63,18 @@ ss = StandardScaler()
 ss_X = ss.fit_transform(X)
 
 ss_X_df = pd.DataFrame(ss_X, columns= data.feature_names)
-ss_Xy_df = st_X_df.copy()
+ss_Xy_df = ss_X_df.copy()
 ss_Xy_df['y'] = y
 ss_Xy_df.corr()
 ```
 The resulting correlation table indicated that standardization had no affect on correlation values.
 
 ## 17
+To answer this question, we must perform a regression of just the MedInc variable on our y.
+```
+np.corrcoef(X_df['MedInc'], y)[0][1]**2, 2
+```
+This returned a coefficient of determination of ~0.47
 
 ## 18
 
