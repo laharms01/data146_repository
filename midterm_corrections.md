@@ -155,7 +155,7 @@ Testing score: 0.60213
 From the correlation table we found in question 15, I determined that the least correlated variable was AveOccup. Next I had to find which regression resulted in the smallest coefficient for this variable.
 ```
 lin = LR(); rid = Ridge(alpha=25.8); las = Lasso(alpha=0.00186)
-lin.fit(Xs, y); rid.fit(Xs, y); las.fit(Xs, y);
+lin.fit(ss_X, y); rid.fit(ss_X, y); las.fit(ss_X, y);
 lin.coef_[5], rid.coef_[5], las.coef_[5]
 ```
 The returned values were:
