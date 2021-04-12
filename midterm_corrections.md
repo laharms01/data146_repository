@@ -181,7 +181,7 @@ print('Optimal alpha value: ' + format(rid_a_range[idx], '.5f'))
 print('Training score for this value: ' + format(rid_tr_mse[idx], '.5f'))
 print('Testing score for this value: ' + format(rid_te_mse[idx], '.5f'))
 ```
-The resulting optimal aplpha value was 26.10000, indicating that using MSE instead of R2 does change our optimal alpha value in ridge regression.
+The resulting optimal alpha value was 26.10000, indicating that using MSE instead of R2 does change our optimal alpha value in ridge regression.
 
 ## 24
 To find out if using MSE instead of R2 would have changed our optimal alpha value when running the lasso regression, we should run our code from question 20 while changing our idx:
@@ -191,6 +191,5 @@ print('Optimal alpha value: ' + format(las_a_range[idx], '.5f'))
 print('Training score for this value: ' + format(las_tr_mse[idx], '.5f'))
 print('Testing score for this value: ' + format(las_te_mse[idx], '.5f'))
 ```
-The resulting optimal aplpha value was 0.00186, indicating that using MSE instead of R2 does not change our optimal alpha value in lasso regression.
+The resulting optimal alpha value was 0.00186, indicating that using MSE instead of R2 does not change our optimal alpha value in lasso regression.
 
-## 25
