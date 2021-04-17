@@ -19,4 +19,4 @@ y = pns.wealthC
 
 > Perform a linear regression and compute the MSE. Standardize the features and again computer the MSE. Compare the coefficients from each of the two models and describe how they have changed.
 
-
+After running a linear regression on the data I calculated the MSE to be 
