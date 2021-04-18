@@ -68,6 +68,47 @@ Standardized Coefficients:
 ```
 
 
+> Run a ridge regression and report your best results.
+
+Next I ran a ridge regression on the data, with an alpha range of 74 - 76, and compared the R^2 values to those from the linear regression to determine the relative effectiveness of the ridge regression results.
+
+Unstandardized R^2: 0.7349521607
+Standardized R^2:   0.7351239419
+
+Based on the results, it seems The ridge regression ended up performing well, having R^2 values similar to those from the linear regression. This indicates our ridge regression is about as effective in analyzing our data. Standardizing our data led to a very slight increase in the effectivenss of the model.
+
+
+> Run a lasso regression and report your best results.
+
+For the lasso regression I used an alpha range of 85 - 95. After runnning through the data, the lasso regression results were as follows:
+
+Unstandardized R^2: 0.7344910812
+Standardized R^2:   0.7351637846
+
+Again, it seems the lasso was around as effective in explaining our data as both the linear and ridge regressions. Standardization seemed to benefit the model very slightly.
+
+
+> Repeat the previous steps using the variable wealthI as your target.
+
+
+
+
+
+
+> Which of the models produced the best results in predicting wealth of all persons throughout the smaller West African country being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Alternatively, you are welcome to provide a link in your references at the end of your (part 1) Project 5 report.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
