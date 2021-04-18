@@ -105,6 +105,8 @@ Standardized R^2:   0.825826
 
 Although setting WealthI as the target seems to increase the R^2 and thus effectiveness of our model, the values for MSE have shot up to very large numbers indicating that something may be problematic to our analysis.
 
+The correlations also changed by a large amount, similar to the linear model when WealthC was our target.
+
 
 Ridge Regression:
 
@@ -126,7 +128,9 @@ The results followed precedent. All three models share a similar R^2 value when 
 > Which of the models produced the best results in predicting wealth of all persons throughout the smaller West African country being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Alternatively, you are welcome to provide a link in your references at the end of your (part 1) Project 5 report.
 
 
+When determining which model produced the best predictive results, we should first eliminate a target that is less effective. Based on what we've seen, across the board, having WealthI as target generates models with larger R^2 values and thus more accurate predictive results. On average, those models with a target of WealthI are about 7.5% more effective than those with a target of WealthC.
 
+As all R^2 values among the remaining three models in consideration are nearly identical, it is hard to precisely decide which model is the best. Based on the data I got during this lab, it seems that the linear model barely beats out the ridge and lasso models as the most effective.
 
 
 
