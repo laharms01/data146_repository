@@ -72,8 +72,10 @@ Standardized Coefficients:
 
 Next I ran a ridge regression on the data, with an alpha range of 74 - 76, and compared the R^2 values to those from the linear regression to determine the relative effectiveness of the ridge regression results.
 
+```
 Unstandardized R^2: 0.7349521607
 Standardized R^2:   0.7351239419
+```
 
 Based on the results, it seems The ridge regression ended up performing well, having R^2 values similar to those from the linear regression. This indicates our ridge regression is about as effective in analyzing our data. Standardizing our data led to a very slight increase in the effectivenss of the model.
 
@@ -82,8 +84,10 @@ Based on the results, it seems The ridge regression ended up performing well, ha
 
 For the lasso regression I used an alpha range of 85 - 95. After runnning through the data, the lasso regression results were as follows:
 
+```
 Unstandardized R^2: 0.7344910812
 Standardized R^2:   0.7351637846
+```
 
 Again, it seems the lasso was around as effective in explaining our data as both the linear and ridge regressions. Standardization seemed to benefit the model very slightly.
 
@@ -97,11 +101,13 @@ y = pns.wealthI
 
 Linear Regression:
 
+```
 Unstandardized MSE: 1750276834.930474
 Standardized MSE:   1750174405.288178
 
 Unstandardized R^2: 0.825836
 Standardized R^2:   0.825826
+```
 
 Although setting WealthI as the target seems to increase the R^2 and thus effectiveness of our model, the values for MSE have shot up to very large numbers indicating that something may be problematic to our analysis.
 
@@ -110,15 +116,19 @@ The correlations also changed by a large amount, similar to the linear model whe
 
 Ridge Regression:
 
+```
 Unstandardized R^2: 0.8248920211
 Standardized R^2:   0.8251763126
+```
 
 Again, the ridge regression is shown to be quite similar to the linear in terms of R^2 values. Standardized and unstandardized values are also very close.
 
 Lasso Regression:
 
+```
 Unstandardized R^2: 0.82518588232
 Standardized R^2:   0.82477660702
+```
 
 The results followed precedent. All three models share a similar R^2 value when WealthI is the target. Whereas all the models had an R^2 around 0.75 when WealthC was the target, now the value seems to be higher at around 0.825. This would indicate that setting WealthI as the target generates a better model to approximate the data, although the large values of MSE must be considered to fully claim this.
 
