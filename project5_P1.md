@@ -19,4 +19,10 @@ y = pns.wealthC
 
 > Perform a linear regression and compute the MSE. Standardize the features and again computer the MSE. Compare the coefficients from each of the two models and describe how they have changed.
 
-After running a linear regression on the data I calculated the MSE to be 
+After running a linear regression on the data I calculated the raw and standardized MSE and R^2 values. The resulting scores are as follows:
+
+Unstandardized MSE: 0.44281008
+Standardized MSE:   0.44281333
+
+Unstandardized R^2: 0.735825
+Standardized R^2:   0.735833
