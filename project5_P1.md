@@ -90,7 +90,33 @@ Again, it seems the lasso was around as effective in explaining our data as both
 
 > Repeat the previous steps using the variable wealthI as your target.
 
+For this part I ran the data through linear, ridge, and lasso regressions just like I did above. However, this time I changed my target variable from WealthC to WealthI:
+```
+y = pns.wealthI
+```
 
+Linear Regression:
+
+Unstandardized MSE: 1750276834.930474
+Standardized MSE:   1750174405.288178
+
+Unstandardized R^2: 0.825836
+Standardized R^2:   0.825826
+
+Although setting WealthI as the target seems to increase the R^2 and thus effectiveness of our model, the values for MSE have shot up to very large numbers indicating that something may be problematic to our analysis.
+
+
+Ridge Regression:
+
+Unstandardized R^2: 0.8248920211
+Standardized R^2:   0.8251763126
+
+Again, the ridge regression is shown to be quite similar to the linear in terms of R^2 values. Whereas all the models had an R^2 around 0.75 when WealthC was the target, now the value seems to be higher at around 0.825. Standardized and unstandardized values are also very close.
+
+Lasso Regression:
+
+Unstandardized R^2: 
+Standardized R^2:   
 
 
 
