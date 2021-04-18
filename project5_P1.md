@@ -111,12 +111,14 @@ Ridge Regression:
 Unstandardized R^2: 0.8248920211
 Standardized R^2:   0.8251763126
 
-Again, the ridge regression is shown to be quite similar to the linear in terms of R^2 values. Whereas all the models had an R^2 around 0.75 when WealthC was the target, now the value seems to be higher at around 0.825. Standardized and unstandardized values are also very close.
+Again, the ridge regression is shown to be quite similar to the linear in terms of R^2 values. Standardized and unstandardized values are also very close.
 
 Lasso Regression:
 
-Unstandardized R^2: 
-Standardized R^2:   
+Unstandardized R^2: 0.82518588232
+Standardized R^2:   0.82477660702
+
+The results followed precedent. All three models share a similar R^2 value when WealthI is the target. Whereas all the models had an R^2 around 0.75 when WealthC was the target, now the value seems to be higher at around 0.825. This would indicate that setting WealthI as the target generates a better model to approximate the data, although the large values of MSE must be considered to fully claim this.
 
 
 
