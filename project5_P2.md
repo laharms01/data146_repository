@@ -19,10 +19,50 @@ from sklearn.preprocessing import StandardScaler as SS
 from sklearn.model_selection import train_test_split as tts
 from sklearn.neighbors import KNeighborsClassifier as KNN
 
-def GetColors(N, map_name='rainbow'):
-    cmap = matplotlib.cm.get_cmap(map_name)
-    n = np.linspace(0, N, N) / N
-    return cmap(n)
+def DoKFold(model, X, y, k=20, standardize = False, random_state = 146, reshape = False):
+    from sklearn.model_selection import KFold
+    kf = KFold(n_splits=k, shuffle=True, random_state=random_state)
+
+    if standardize:
+        from sklearn.preprocessing import StandardScaler as SS
+        ss = SS()
+
+    train_scores = []
+    test_scores = []
+
+    train_mse = []
+    test_mse = []
+
+    for idxTrain, idxTest in kf.split(X):
+        
+        ytrain = y[idxTrain]
+        ytest = y[idxTest]
+            
+        if reshape:
+            Xtrain = X[idxTrain]
+            Xtest = X[idxTest]
+            Xtrain = np.reshape(Xtrain,(-1, 1))
+            Xtest = np.reshape(Xtest,(-1, 1))
+        else:
+            Xtrain = X[idxTrain,:]
+            Xtest = X[idxTest,:]
+
+        if standardize:
+            Xtrain = ss.fit_transform(Xtrain)
+            Xtest = ss.transform(Xtest)
+
+        model.fit(Xtrain, ytrain)
+
+        train_scores.append(model.score(Xtrain, ytrain))
+        test_scores.append(model.score(Xtest, ytest))
+
+        ytrain_pred = model.predict(Xtrain)
+        ytest_pred = model.predict(Xtest)
+
+        train_mse.append(np.mean((ytrain - ytrain_pred)**2))
+        test_mse.append(np.mean((ytest - ytest_pred)**2))
+
+    return train_scores,test_scores,train_mse,test_mse
 
 
 def GetData(scale=False):
@@ -32,23 +72,6 @@ def GetData(scale=False):
         Xtrain = ss.fit_transform(Xtrain)
         Xtest = ss.transform(Xtest)
     return Xtrain, Xtest, ytrain, ytest
-
-
-def PlotGroups(points, groups, colors, ec='black', ax='None', alpha=0.5, marker=None, s=None):
-    if ax == 'None':
-        fig, ax = plt.subplots()
-    else:
-        fig = plt.gcf()
-
-    for i in np.unique(groups):
-        idx = (groups == i)
-        ax.scatter(points[idx, 0], points[idx, 1],
-                   color=colors[i], edgecolor=ec,
-                   label='Group ' + str(i), alpha=alpha, marker=marker, s=s)
-    ax.set_xlabel('$x_1$')
-    ax.set_ylabel('$x_2$')
-    ax.legend(bbox_to_anchor=[1, 0.5], loc='center left')
-    return fig, ax
 
 
 def CompareClasses(actual, predicted, names=None):
@@ -83,6 +106,8 @@ y = pns.wealthC
 
 
 > Execute a K-nearest neighbors classification method on the data. What model specification returned the most accurate results? Did adding a distance weight help?
+
+In this first step, I ran the data through the KNN classifier with a range of 10 - 80. It seemed that as the value of k increased, the training and testing scores slowly converged, to a point. The resulting training score was 0.6237 at k = 10, and the testing score was 0.5540 at k = 75. Thus the model was overfit. 
 
 > Execute a logistic regression method on the data. How did this model fair in terms of accuracy compared to K-nearest neighbors?
 
