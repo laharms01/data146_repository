@@ -107,8 +107,10 @@ y = pns.wealthC
 
 > Execute a K-nearest neighbors classification method on the data. What model specification returned the most accurate results? Did adding a distance weight help?
 
-In this first step, I ran the data through the KNN classifier with a range of 10 - 80. It seemed that as the value of k increased, the training and testing scores slowly converged, to a point. The resulting training score was 0.6237 at k = 10, and the testing score was 0.5540 at k = 75. Thus the model was overfit. 
-The relationship between the k value and resulting train / test scores can be seen in the following graph: [Plot 1](rplot1.png)
+In this first step, I ran the data through the KNN classifier with a range of 10 - 80. It seemed that as the value of k increased, the training and testing scores slowly converged. The resulting training score was 0.6237 at k = 10, and the testing score was 0.5540 at k = 75. Thus the model was overfit. 
+The relationship between the k value and resulting train (blue line) / test (orange line) scores can be seen in the following graph: [Plot 1](rplot1.png)
+
+Rerunning the KNN classifier with a distance weight did change our results. The resulting training score increased to 0.8040 while the testing score decreased to 0.4890. The effects of this distance weight on our scores can be seen in the following graph with training scores in blue and testing in orange: 
 
 > Execute a logistic regression method on the data. How did this model fair in terms of accuracy compared to K-nearest neighbors?
 
