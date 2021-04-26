@@ -145,4 +145,38 @@ Standardizing the data had the following results on the efficacy of our models:
 
 > Repeat the previous steps after recoding the wealth classes 2 and 3 into a single outcome. Do any of your models improve? Are you able to explain why your results have changed?
 
+I recoded welath class 2 and 3 into a single outcome with the following code:
+```
+pns['wealthC_adjust'] = np.where((pns['wealthC'] == 2)(pns['wealthC'] == 3), 2.5, pns['wealthC'])
+pns['wealthC_adjust'] = pns['wealthC_adjust'].astype(int)
+
+X = np.array(pns.drop(["wealthC"], axis=1).drop(["wealthC_adjust"], axis=1))
+y = np.array(pns.wealthC_adjust)
+```
+
+Next, I reran the KNN, linear, and random forest models with the new wealth classes. The resulting testing scores were:
+
+    KNN: 0.55969
+    
+    Linear: 0.53021
+    
+    Random Forest: 0.57554
+    
+    100 estimator Standardized: 0.548889385
+    
+    100 estimator Unstandardized: 0.54363178
+    
+    500 estimator Standardized: 0.54845267
+    
+    500 estimator Unstandardized: 0.546940445
+    
+    1000 estimator Standardized: 0.54023178
+    
+    1000 estimator Unstandardized: 0.54688805
+    
+    5000 estimator Standardized: 0.55114761
+    
+    5000 estimator Unstandardized: 0.54267465
+
+
 > Which of the models produced the best results in predicting wealth of all persons throughout the large West African capital city being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Avoiding setting a seed essentially guarantees the authenticity of your results. You are welcome to provide a link in your references at the end of your (part 2) Project 5 report.
