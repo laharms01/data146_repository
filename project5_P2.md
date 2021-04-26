@@ -112,7 +112,11 @@ The relationship between the k value and resulting train (blue line) / test (ora
 
 Rerunning the KNN classifier with a distance weight did change our results. The resulting training score increased to 0.8040 while the testing score decreased to 0.4890. The effects of this distance weight on our scores can be seen in the following graph with training scores in blue and testing in orange: [Plot 2](rplot2.png)
 
+
 > Execute a logistic regression method on the data. How did this model fair in terms of accuracy compared to K-nearest neighbors?
+
+Next, I ran a linear regression to detemine its relative efficacy in analyzing our data. The training score I got from the linear regression was 0.5495 while the testing score was 0.5505. Although the resulting model was only slightly underfit, it had comparable and perhaps even less efficacy than the KNN classifier above.
+
 
 > Next execute a random forest model and produce the results. See the number of estimators (trees) to 100, 500, 1000 and 5000 and determine which specification is most likely to return the best model. Also test the minimum number of samples required to split an internal node with a range of values. Also produce results for your four different estimator values by both comparing both standardized and non-standardized (raw) results.
 
