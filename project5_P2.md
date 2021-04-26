@@ -176,8 +176,8 @@ When compared to the previous models before the recoding, the testing score of t
 
 > Which of the models produced the best results in predicting wealth of all persons throughout the large West African capital city being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Avoiding setting a seed essentially guarantees the authenticity of your results. You are welcome to provide a link in your references at the end of your (part 2) Project 5 report.
 
-All of the recoded models, besides linear, were more efficient models than those before the recoding. The most effective of the models before recoding was the unweighted KNN model with a testing score of 0.5540. The graphs from the first part show this. Even after recoding, the KNN model remained the most efficient in explaining our data, with a testing score of 0.55969.
-
+All of the recoded models, besides linear, were more efficient models than those before the recoding. The most effective of the models before recoding was the unweighted KNN model with a testing score of 0.5540. The graphs from the first part show this. Even after recoding, the KNN model remained the most efficient in explaining our data, with a testing score of 0.55969. While the recoded results from the random forest model are comparable to these results they are slightly less effective.
+ 
 
 
 
