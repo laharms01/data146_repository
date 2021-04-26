@@ -120,6 +120,21 @@ Next, I ran a linear regression to detemine its relative efficacy in analyzing o
 
 > Next execute a random forest model and produce the results. See the number of estimators (trees) to 100, 500, 1000 and 5000 and determine which specification is most likely to return the best model. Also test the minimum number of samples required to split an internal node with a range of values. Also produce results for your four different estimator values by both comparing both standardized and non-standardized (raw) results.
 
+Next I ran the data through a random forest model with estimators of 100, 500, 1000, and 5000. Although all four estimators resulted in a training score of 0.79134, their testing scores were more distributed. The 1000 estimator was the best, producing a testing score of 0.50122. Following this, the 500 and 5000 were the next best with very similar testing scores, 0.49780 and 0.49585 respectively. The least effective estimator was 100 with a testing score of 0.49488. Because all testing scores were significantly lower than the shared training score, all models produced were significantly overfit.
+
+The minimum number of samples required to split an internal node within a range of 20 - 30 was determined to be 25. This produced trainaing and testing scores that were much closer together. Training values ranged from 0.63640 to 0.65690 while testing values ranged from 0.54563 to 0.55344, a decent bump when compared to previous results.
+
+Standardizing the data had the following results on the efficacy of our models:
+    100 estimator Standardized: 0.48316
+    100 estimator Unstandardized: 0.47145
+    500 estimator Standardized: 0.49536
+    500 estimator Unstandardized: 0.47535
+    1000 estimator Standardized: 0.50073
+    1000 estimator Unstandardized: 0.48267
+    5000 estimator Standardized: 0.49292
+    5000 estimator Unstandardized: 0.48316
+
+
 > Repeat the previous steps after recoding the wealth classes 2 and 3 into a single outcome. Do any of your models improve? Are you able to explain why your results have changed?
 
 > Which of the models produced the best results in predicting wealth of all persons throughout the large West African capital city being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Avoiding setting a seed essentially guarantees the authenticity of your results. You are welcome to provide a link in your references at the end of your (part 2) Project 5 report.
