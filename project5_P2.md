@@ -7,17 +7,13 @@ import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import load_wine as ld
-from sklearn.datasets import load_breast_cancer as lbc
-from sklearn.datasets import make_blobs as mb
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 from sklearn.model_selection import KFold
-from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import StandardScaler as SS
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier as RFC
 from sklearn.model_selection import train_test_split as tts
 from sklearn.neighbors import KNeighborsClassifier as KNN
+
 
 def DoKFold(model, X, y, k=20, standardize = False, random_state = 146, reshape = False):
     from sklearn.model_selection import KFold
