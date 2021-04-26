@@ -125,13 +125,21 @@ Next I ran the data through a random forest model with estimators of 100, 500, 1
 The minimum number of samples required to split an internal node within a range of 20 - 30 was determined to be 25. This produced trainaing and testing scores that were much closer together. Training values ranged from 0.63640 to 0.65690 while testing values ranged from 0.54563 to 0.55344, a decent bump when compared to previous results.
 
 Standardizing the data had the following results on the efficacy of our models:
+
     100 estimator Standardized: 0.48316
+    
     100 estimator Unstandardized: 0.47145
+    
     500 estimator Standardized: 0.49536
+    
     500 estimator Unstandardized: 0.47535
+    
     1000 estimator Standardized: 0.50073
+    
     1000 estimator Unstandardized: 0.48267
+    
     5000 estimator Standardized: 0.49292
+    
     5000 estimator Unstandardized: 0.48316
 
 
