@@ -160,8 +160,6 @@ Next, I reran the KNN, linear, and random forest models with the new wealth clas
     
     Linear: 0.53021
     
-    Random Forest: 0.57554
-    
     100 estimator Standardized: 0.548889385
     
     100 estimator Unstandardized: 0.54363178
@@ -178,5 +176,6 @@ Next, I reran the KNN, linear, and random forest models with the new wealth clas
     
     5000 estimator Unstandardized: 0.54267465
 
+When compared to the previous models before the recoding, the testing score of the KNN and random forest models increased. In contrast, the testing score of the linear model decreased slightly. The increases in the testing scores of most models could be caused by the decreased variability of our data as a result of combining welath classes.
 
 > Which of the models produced the best results in predicting wealth of all persons throughout the large West African capital city being described? Support your results with plots, graphs and descriptions of your code and its implementation. You are welcome to incorporate snippets to illustrate an important step, but please do not paste verbose amounts of code within your project report. Avoiding setting a seed essentially guarantees the authenticity of your results. You are welcome to provide a link in your references at the end of your (part 2) Project 5 report.
