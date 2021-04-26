@@ -143,11 +143,11 @@ Standardizing the data had the following results on the efficacy of our models:
 
 I recoded welath class 2 and 3 into a single outcome with the following code:
 ```
-pns['wealthC_adjust'] = np.where((pns['wealthC'] == 2)(pns['wealthC'] == 3), 2.5, pns['wealthC'])
-pns['wealthC_adjust'] = pns['wealthC_adjust'].astype(int)
+pns['wealthC_adj'] = np.where((pns['wealthC'] == 2)(pns['wealthC'] == 3), 2.5, pns['wealthC'])
+pns['wealthC_adj'] = pns['wealthC_adj'].astype(int)
 
-X = np.array(pns.drop(["wealthC"], axis=1).drop(["wealthC_adjust"], axis=1))
-y = np.array(pns.wealthC_adjust)
+X = np.array(pns.drop(["wealthC"], axis=1).drop(["wealthC_adj"], axis=1))
+y = np.array(pns.wealthC_adj)
 ```
 
 Next, I reran the KNN, linear, and random forest models with the new wealth classes. The resulting testing scores were:
